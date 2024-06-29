@@ -1,0 +1,12 @@
+name: zookeeper
+
+services:
+  zookeeper:
+    image: "zookeeper:3.9.2-jre-17"
+    restart: always
+    mem_limit: 512m
+    ports:
+      - 2181:2181
+    volumes:
+      - /e/dev2/docker-compose/zookeeper/data:/data
+      - /e/dev2/docker-compose/zookeeper/datalog:/datalog

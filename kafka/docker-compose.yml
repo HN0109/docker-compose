@@ -1,0 +1,17 @@
+name: kafka
+
+services:
+  kafka:
+    image: "bitnami/kafka:3.6.2"
+    restart: always
+    mem_limit: 1024m
+    ports:
+      - 9092:9092
+    volumes:
+      - /e/dev2/docker-compose/kafka/data:/bitnami/kafka/data
+    environment:
+      - KAFKA_BROKER_ID=1
+      - ALLOW_PLAINTEXT_LISTENER=yes
+      - KAFKA_CFG_LISTENERS=PLAINTEXT://:9092
+      - KAFKA_CFG_ADVERTISED_LISTENERS=PLAINTEXT://192.168.60.1:9092
+      - KAFKA_CFG_ZOOKEEPER_CONNECT=192.168.60.1:2181/kafka

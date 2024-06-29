@@ -1,0 +1,17 @@
+name: rabbitmq
+
+services:
+  rabbitmq:
+    image: "rabbitmq:3.13.3-management-alpine"
+    restart: always
+    mem_limit: 1024m
+    ports:
+      - 5672:5672
+      - 15672:15672
+      - 15692:15692
+    environment:
+      - RABBITMQ_DEFAULT_USER=admin
+      - RABBITMQ_DEFAULT_PASS=admin
+    volumes:
+      - /e/dev2/docker-compose/rabbitmq/data:/var/lib/rabbitmq:z
+    

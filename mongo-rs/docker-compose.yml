@@ -1,0 +1,44 @@
+name: mongo-rs
+
+services:
+  mongo1:
+    image: "mongo:7.0.12"
+    container_name: mongo1
+    restart: always
+    mem_limit: 1024m
+    ports:
+      - 27011:27017
+    command: mongod --replSet rs0
+    environment:
+      - TZ=Asia/Shanghai
+    volumes:
+      - /e/dev2/docker-compose/mongo-rs/mongo1/data/db:/data/db
+      - /e/dev2/docker-compose/mongo-rs/mongo1/data/configdb:/data/configdb
+
+  mongo2:
+    image: "mongo:7.0.12"
+    container_name: mongo2
+    restart: always
+    mem_limit: 1024m
+    ports:
+      - 27012:27017
+    command: mongod --replSet rs0
+    environment:
+      - TZ=Asia/Shanghai
+    volumes:
+      - /e/dev2/docker-compose/mongo-rs/mongo2/data/db:/data/db
+      - /e/dev2/docker-compose/mongo-rs/mongo2/data/configdb:/data/configdb
+
+  mongo3:
+    image: "mongo:7.0.12"
+    container_name: mongo3
+    restart: always
+    mem_limit: 1024m
+    ports:
+      - 27013:27017
+    command: mongod --replSet rs0
+    environment:
+      - TZ=Asia/Shanghai
+    volumes:
+      - /e/dev2/docker-compose/mongo-rs/mongo3/data/db:/data/db
+      - /e/dev2/docker-compose/mongo-rs/mongo3/data/configdb:/data/configdb

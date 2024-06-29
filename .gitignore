@@ -1,0 +1,17 @@
+.idea
+
+kafka/data/**
+
+mongo-rs/mongo1/data/configdb/**
+mongo-rs/mongo1/data/db/**
+mongo-rs/mongo2/data/configdb/**
+mongo-rs/mongo2/data/db/**
+mongo-rs/mongo3/data/configdb/**
+mongo-rs/mongo3/data/db/**
+
+neo4j/data/**
+
+rabbitmq/data/**
+
+zookeeper/data/**
+zookeeper/datalog/**
