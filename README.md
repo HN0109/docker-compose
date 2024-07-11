@@ -5,10 +5,12 @@ docker-compose部署本地开发环境常用中间件
 
 #### 中间件列表
 - kafka
+- minio
 - mongo-rs(mongodb复制集)
 - neo4j
 - rabbitmq
 - redis
+- victoria-metrics
 - zookeeper
 
 

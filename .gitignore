@@ -15,5 +15,7 @@ neo4j/data/**
 
 rabbitmq/data/**
 
+victoria-metrics/data/**
+
 zookeeper/data/**
 zookeeper/datalog/**

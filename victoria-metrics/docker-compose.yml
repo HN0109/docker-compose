@@ -1,0 +1,11 @@
+name: victoria-metrics
+
+services:
+  victoria-metrics:
+    image: "victoriametrics/victoria-metrics:v1.101.0"
+    restart: always
+    mem_limit: 1024m
+    ports:
+      - 8428:8428
+    volumes:
+      - /e/dev2/docker-compose/victoria-metrics/data:/victoria-metrics-data
