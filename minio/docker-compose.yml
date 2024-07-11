@@ -1,0 +1,16 @@
+name: minio
+
+services:
+  minio:
+    image: "minio/minio:RELEASE.2024-07-10T18-41-49Z"
+    restart: always
+    mem_limit: 256m
+    ports:
+      - 9000:9000
+      - 9001:9001
+    environment:
+      - MINIO_ACCESS_KEY=adminadmin
+      - MINIO_SECRET_KEY=adminadmin
+    volumes:
+      - /e/dev2/docker-compose/minio/data:/data
+    command: minio server /data --console-address ":9001"
